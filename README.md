@@ -8,33 +8,33 @@ A **priority encoder** is a combinational logic circuit that solves a common
 problem with ordinary encoders: when two or more inputs become active
 simultaneously it is unclear which input should be encoded.  In a standard
 encoder only one input may be active at a time; in practical systems two or
-more keys or interrupt requests can be asserted together【41287155402778†L309-L325】.
+more keys or interrupt requests can be asserted together.
 A priority encoder assigns a fixed priority to each input and produces a
 binary code corresponding to the *highest‑priority* active input.  It outputs
 an **n‑bit code** along with a **valid flag** that indicates whether any
 input is active【41287155402778†L354-L359】.  If multiple inputs are high the
 encoder ignores all lower‑priority inputs and arbitrates to select the
-highest priority【41287155402778†L329-L335】.
+highest priority.
 
 Typical digital systems employ priority encoders for tasks such as keyboard
 scan coding, interrupt handling and bus arbitration; for example, if keys 4
 and 2 are pressed simultaneously the priority encoder will encode 4
-instead of producing an invalid code【41287155402778†L309-L325】.
+instead of producing an invalid code.
 
 ## Features
 
 * **Fixed priority scheme.**  Inputs are ordered by their numeric value; the
   highest numbered input has the highest priority.  For a 4‑input encoder
   the input `I3` has the highest priority, followed by `I2`, `I1` and
-  finally `I0`【41287155402778†L372-L377】.
+  finally `I0`.
 * **Valid flag.**  The output includes a valid bit `V` that is set to `1`
-  when one or more inputs are high and `0` otherwise【41287155402778†L354-L359】.
+  when one or more inputs are high and `0` otherwise.
   When `V` is zero the other outputs are don’t‑care values.
 * **Arbitration.**  The encoder performs arbitration among multiple active
-  inputs and selects only the highest priority input【41287155402778†L329-L335】.
+  inputs and selects only the highest priority input.
 * **Scalable architecture.**  Priority encoders can be built for any number
   of inputs.  A common configuration is the **8‑to‑3 encoder** which has eight
-  inputs and three binary outputs【41287155402778†L424-L426】.
+  inputs and three binary outputs.
 
 ## Architecture
 
@@ -65,7 +65,7 @@ V &= I_3 + I_2 + I_1 + I_0
 The table below shows the truth table of a **4‑to‑2** priority encoder.  The
 “X” entries are don’t‑care values.  The valid bit `V` is set when at least
 one input is high; when all inputs are zero the outputs `A` and `B` are
-undefined【41287155402778†L354-L359】.
+undefined.
 
 | `I3` | `I2` | `I1` | `I0` | `A` | `B` | `V` | Description |
 |----|----|----|----|----|----|----|-------------|
