@@ -12,7 +12,7 @@ more keys or interrupt requests can be asserted together.
 A priority encoder assigns a fixed priority to each input and produces a
 binary code corresponding to the *highest‑priority* active input.  It outputs
 an **n‑bit code** along with a **valid flag** that indicates whether any
-input is active【41287155402778†L354-L359】.  If multiple inputs are high the
+input is active.  If multiple inputs are high the
 encoder ignores all lower‑priority inputs and arbitrates to select the
 highest priority.
 
@@ -50,15 +50,8 @@ priority are ignored.
 The boolean equations for a 4‑input priority encoder illustrate how the
 priority scheme works.  For inputs `I0`–`I3` the outputs `A` and `B`
 represent the binary code of the active input and `V` is the OR of all
-inputs:
+inputs.
 
-\[
-\begin{aligned}
-A &= I_3 + I_2 \\
-B &= I_3 + \bar{I_2} I_1 \\
-V &= I_3 + I_2 + I_1 + I_0
-\end{aligned}
-\]【41287155402778†L382-L390】
 
 ## Truth Table
 
@@ -165,5 +158,4 @@ description languages.  Please open an issue or submit a pull request.
 This project is released under the **MIT License**.  The custom diagram
 `priority_encoder_diagram.png` and the pixel‑art hero image are released
 under the same license.  The information in this README draws on open
-educational resources【41287155402778†L309-L325】【41287155402778†L354-L359】 for
-illustrative purposes.
+educational resources for illustrative purposes.
